@@ -1,11 +1,5 @@
-import {
-  Column,
-  Entity,
-  JoinTable,
-  ManyToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
-import { Owner } from 'src/owner/entities/owner.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Batch } from 'src/batch/entities/batch.entity';
 
 @Entity()
 export class Farm {
@@ -19,4 +13,6 @@ export class Farm {
     type: 'float',
   })
   hectareas: number;
+  @OneToMany(() => Batch, (batch) => batch.farm)
+  batchs: Batch[];
 }
