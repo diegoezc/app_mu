@@ -9,6 +9,11 @@ import { TypeAnimalModule } from './type-animal/type-animal.module';
 import { AnimalModule } from './animal/animal.module';
 import { BatchModule } from './batch/batch.module';
 import { MedicalHistoryModule } from './medical-history/medical-history.module';
+import { WeightHistoryModule } from './weight-history/weight-history.module';
+import { TypeVaccineModule } from './type-vaccine/type-vaccine.module';
+import { VaccineModule } from './vaccine/vaccine.module';
+import { DoseModule } from './dose/dose.module';
+import { PalpatedModule } from './palpated/palpated.module';
 
 @Module({
   imports: [
@@ -19,6 +24,11 @@ import { MedicalHistoryModule } from './medical-history/medical-history.module';
     AnimalModule,
     BatchModule,
     MedicalHistoryModule,
+    WeightHistoryModule,
+    TypeVaccineModule,
+    VaccineModule,
+    DoseModule,
+    PalpatedModule,
   ],
   controllers: [AppController],
   providers: [AppService],
