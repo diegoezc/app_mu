@@ -12,6 +12,10 @@ export class Vaccine {
     nullable: true,
   })
   amount: string;
+  @Column({
+    type: 'date',
+  })
+  date: string;
   @ManyToOne(() => TypeVaccine, (type_vacicine) => type_vacicine.vaccine)
   type_vaccine: TypeVaccine;
   @ManyToOne(() => Animal, (animal) => animal.vaccine)
