@@ -10,6 +10,10 @@ import { Batch } from 'src/batch/entities/batch.entity';
 import { WeightHistory } from 'src/weight-history/entities/weight-history.entity';
 import { Vaccine } from 'src/vaccine/entities/vaccine.entity';
 import { Palpated } from 'src/palpated/entities/palpated.entity';
+import { Fecundation } from 'src/fecundation/entities/fecundation.entity';
+import { Milk } from 'src/milk/entities/milk.entity';
+import { Birth } from 'src/births/entities/birth.entity';
+import { EmptyMu } from 'src/empty_mu/entities/empty_mu.entity';
 
 @Entity()
 export class Animal {
@@ -40,4 +44,12 @@ export class Animal {
   vaccine: Vaccine[];
   @OneToMany(() => Palpated, (palpated) => palpated.animal)
   palpated: Palpated[];
+  @OneToMany(() => Fecundation, (fecundation) => fecundation.animal)
+  fecundation: Fecundation[];
+  @OneToMany(() => Milk, (milk) => milk.animal)
+  milk: Milk[];
+  @OneToMany(() => Birth, (birth) => birth.animal)
+  birth: Birth[];
+  @OneToMany(() => EmptyMu, (emptyMu) => emptyMu.animal)
+  emptyMu: EmptyMu[];
 }

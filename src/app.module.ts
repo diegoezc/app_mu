@@ -14,6 +14,11 @@ import { TypeVaccineModule } from './type-vaccine/type-vaccine.module';
 import { VaccineModule } from './vaccine/vaccine.module';
 import { DoseModule } from './dose/dose.module';
 import { PalpatedModule } from './palpated/palpated.module';
+import { TypeInseminationModule } from './type-insemination/type-insemination.module';
+import { FecundationModule } from './fecundation/fecundation.module';
+import { MilkModule } from './milk/milk.module';
+import { BirthsModule } from './births/births.module';
+import { EmptyMuModule } from './empty_mu/empty_mu.module';
 
 @Module({
   imports: [
@@ -29,6 +34,11 @@ import { PalpatedModule } from './palpated/palpated.module';
     VaccineModule,
     DoseModule,
     PalpatedModule,
+    TypeInseminationModule,
+    FecundationModule,
+    MilkModule,
+    BirthsModule,
+    EmptyMuModule,
   ],
   controllers: [AppController],
   providers: [AppService],
