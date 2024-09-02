@@ -6,7 +6,7 @@ import { MedicalHistory } from 'src/medical-history/entities/medical-history.ent
 export class TypeAnimal {
   @PrimaryGeneratedColumn()
   id: number;
-  @Column({ length: 50 })
+  @Column()
   name: string;
   @OneToMany(() => Animal, (animal) => animal.type_animal)
   animals: Animal[];

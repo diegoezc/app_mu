@@ -19,6 +19,8 @@ import { FecundationModule } from './fecundation/fecundation.module';
 import { MilkModule } from './milk/milk.module';
 import { BirthsModule } from './births/births.module';
 import { EmptyMuModule } from './empty_mu/empty_mu.module';
+import { TypeAnimalSeederModule } from './seeders/type-animal-seeder/type-animal-seeder.module';
+import { SeedersModule } from './seeders/seeders.module';
 
 @Module({
   imports: [
@@ -39,6 +41,8 @@ import { EmptyMuModule } from './empty_mu/empty_mu.module';
     MilkModule,
     BirthsModule,
     EmptyMuModule,
+    TypeAnimalSeederModule,
+    SeedersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -17,7 +17,7 @@ import { EmptyMu } from 'src/empty_mu/entities/empty_mu.entity';
 
 @Entity()
 export class Animal {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
   @Column({
     length: 10,
@@ -34,6 +34,7 @@ export class Animal {
     nullable: true,
   })
   status: string;
+
   @ManyToOne(() => TypeAnimal, (type_animal) => type_animal.animals)
   type_animal: TypeAnimal;
   @ManyToOne(() => Batch, (batch) => batch.animals)
