@@ -23,6 +23,10 @@ export class Owner {
     unique: true,
   })
   email: string;
+  @Column({
+    unique: true,
+  })
+  password: string;
 
   @ManyToMany(() => Farm)
   @JoinTable()

@@ -1,11 +1,15 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { TypeAnimalSeederService } from './type-animal-seeder/type-animal-seeder.service';
+import { FarmSeederService } from './farm-seeder/farm-seeder.service';
+import { OwnerSeederService } from './owner-seeder/owner-seeder.service';
 
 @Injectable()
 export class SeedersService {
   constructor(
     private readonly logger: Logger,
     private readonly typeAnimalSeederService: TypeAnimalSeederService,
+    private readonly farmSeederService: FarmSeederService,
+    private readonly ownerSeederService: OwnerSeederService,
   ) {}
 
   async seed() {
@@ -21,7 +25,11 @@ export class SeedersService {
   }
 
   async seedData() {
-    return await Promise.all(this.typeAnimalSeederService.create())
+    return await Promise.all([
+      this.typeAnimalSeederService.create(),
+      this.farmSeederService.create(),
+      this.ownerSeederService.create(),
+    ])
       .then((created) => {
         this.logger.debug(
           'No. of type animals created : ' +
