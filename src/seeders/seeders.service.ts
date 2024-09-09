@@ -2,6 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { TypeAnimalSeederService } from './type-animal-seeder/type-animal-seeder.service';
 import { FarmSeederService } from './farm-seeder/farm-seeder.service';
 import { OwnerSeederService } from './owner-seeder/owner-seeder.service';
+import { BatchSeederService } from './batch-seeder/batch-seeder.service';
 
 @Injectable()
 export class SeedersService {
@@ -10,6 +11,7 @@ export class SeedersService {
     private readonly typeAnimalSeederService: TypeAnimalSeederService,
     private readonly farmSeederService: FarmSeederService,
     private readonly ownerSeederService: OwnerSeederService,
+    private readonly batchSeederService: BatchSeederService,
   ) {}
 
   async seed() {
@@ -29,6 +31,7 @@ export class SeedersService {
       this.typeAnimalSeederService.create(),
       this.farmSeederService.create(),
       this.ownerSeederService.create(),
+      this.batchSeederService.create(),
     ])
       .then((created) => {
         this.logger.debug(
